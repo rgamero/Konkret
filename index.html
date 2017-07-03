@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Ejercicio Mill | Ruben Gamero</title>
+		<meta name="description" content="Ejercicio Mill Ruben Gamero" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="Ruben Gamero" />
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Oswald:300,600" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+    <section class="cabecera">
+      <h1>Konkret Magazine</h1>
+      <div class="btn">
+        Conózcanos
+      </div>
+      <div class="btn" id="loginform">
+        Inicie sesión
+      </div>
+      <div class="login">
+      <div class="arrow-up"></div>
+      <div class="formholder">
+        <div class="randompad">
+           <fieldset>
+             <input class="input__field" type="email" maxlength="35" id="correo" />
+             <label class="input__label" for="correo">
+   						<span class="input__label-content">E-mail</span>
+   					 </label>
+             <input class="input__field" type="password" id="pass" maxlength="30" />
+             <label class="input__label" for="pass">
+   						<span class="input__label-content" style="margin-bottom: 10px">Password</span>
+   					 </label>
+             <input type="submit" value="Login" />
+           </fieldset>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class="content">
+      <h2>Sea un miembro de Konkret</h2>
+      <form>
+				<span class="input">
+					<input class="input__field" type="text" id="nombre" maxlength="35" />
+					<label class="input__label" for="nombre">
+						<span class="input__label-content">Nombre</span>
+					</label>
+				</span>
+				<span class="input">
+					<input class="input__field" type="text" id="precio" maxlength="35" />
+					<label class="input__label" for="precio">
+						<span class="input__label-content">Precio</span>
+					</label>
+				</span>
+        <div></div>
+				<span class="input">
+          <textarea class="input__field" name="mensaje" id="desc" maxlength="190" rows="5" style="overflow: hidden"></textarea>
+					<label class="desc input__label" for="desc">
+						<span class="input__label-content">Descripción</span>
+					</label>
+				</span>
+
+        <button type="submit" value="Register">Regístrese</button>
+       </form>
+			</section>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="js/classie.js"></script>
+
+		<script type="text/javascript">
+			(function() {
+				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+
+				[].slice.call( document.querySelectorAll( 'input.input__field, textarea.input__field, fieldset.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+		</script>
+    <script type="text/javascript">
+    $('#loginform').click(function(){
+    $('.login').fadeToggle('slow');
+    });
+    $(document).mouseup(function (e)
+    {
+      var container = $(".login");
+
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) // ... nor a descendant of the container
+      {
+          container.hide();
+      }
+    });
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "ejercicio_mill",
+  "version": "1.0.0",
+  "description": "Ejercicio Mill Ruben Gamero",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node-sass -w scss/estilos.scss css/estilos.css --output-style nested"
+  },
+  "author": "Ruben Gamero",
+  "license": "ISC"
+}

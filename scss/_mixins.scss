@@ -1,0 +1,34 @@
+// Mixins
+@mixin trans {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+}
+// Mixin media-queries
+@mixin respond-to($media) {
+  @if $media == mincels {
+    @media #{$minmobile} { @content; }
+  }
+  @else if $media == celulares {
+    @media #{$mobile} { @content; }
+  }
+  @else if $media == tabletas {
+    @media #{$tablet} { @content; }
+  }
+  @else if $media == computadores {
+    @media #{$desktop} { @content; }
+  }
+}
+// Mixin keyframes
+@mixin keyframes ($anim-name) {
+    @-webkit-keyframes #{$anim-name}{
+        @content;
+    }
+    @-moz-keyframes #{$anim-name}{
+        @content;
+    }
+    @keyframes #{$anim-name}{
+        @content;
+    }
+}
