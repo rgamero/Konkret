@@ -46,7 +46,7 @@ a {
 .cabecera {
   color: #303030;
   background-color: #c4c4c4;
-  background-image: url(../img/overlay.png);
+  background-image: url("../img/overlay.png");
   text-align: center;
   height: 100vh; }
   .cabecera h1 {
@@ -129,7 +129,7 @@ a {
     color: #303030; }
   .btn:hover::after, .btn:hover::before {
     -webkit-transform: scale(1); }
-  .btn::before, .btn::after {
+  .btn::after, .btn::before {
     width: 100%;
     height: 100%;
     z-index: 3;
@@ -147,7 +147,7 @@ a {
   .btn::after {
     border-top: 3px solid #303030;
     border-right: 3px solid #303030;
-    -webkit-transform-origin: 100% 0%; }
+    -webkit-transform-origin: 100% 0; }
   .btn:nth-child(3) {
     margin-top: 1.35em;
     width: 6em;
@@ -240,8 +240,7 @@ a {
         display: block;
         width: 70%;
         cursor: pointer;
-        margin: auto;
-        margin-top: 5px;
+        margin: 5px auto auto;
         color: #787878;
         -webkit-transition: 0.4s;
         transition: 0.4s; }
@@ -258,7 +257,7 @@ a {
   font-family: 'Oswald', Helvetica, Arial, sans-serif;
   font-size: 120%;
   background-color: #303030;
-  background-image: url(../img/overlay.png);
+  background-image: url("../img/overlay.png");
   text-align: center;
   color: #c4c4c4;
   height: 100vh; }
@@ -392,23 +391,23 @@ a {
     .input__label-content {
       padding: 0.5em 0; } }
 
-.input__field:focus,
-.input--filled .input__field {
+.input--filled .input__field,
+.input__field:focus {
   opacity: 1;
   -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s; }
 
-.input__field:focus + .input__label::before,
-.input--filled .input__label::before {
+.input--filled .input__label::before,
+.input__field:focus + .input__label::before {
   -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
   transform: perspective(1000px) rotate3d(1, 0, 0, 0deg); }
 
-.input__field:focus + .input__label,
-.input--filled .input__label {
+.input--filled .input__label,
+.input__field:focus + .input__label {
   pointer-events: none; }
 
-.input__field:focus + .input__label::after,
-.input--filled .input__label::after {
+.input--filled .input__label::after,
+.input__field:focus + .input__label::after {
   -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
   transform: perspective(1000px) rotate3d(1, 0, 0, -90deg); }
 
@@ -422,8 +421,7 @@ form button[type="submit"] {
   display: block;
   width: 15%;
   cursor: pointer;
-  margin: auto;
-  margin-top: 5px;
+  margin: 5px auto auto;
   color: #787878;
   -webkit-transition: 0.4s;
   transition: 0.4s; }

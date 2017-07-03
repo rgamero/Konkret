@@ -1,14 +1,16 @@
 @import "_reset";
 @import "_mixins";
 @import "_variables";
+
 .cabecera {
-  color:$c3;
+  color: $c3;
   background: {
     color: $c1;
-    image: url(../img/overlay.png);
+    image: url("../img/overlay.png");
   }
   text-align: center;
   height: 100vh;
+
   h1 {
     font: {
       family: 'Archivo Black', Helvetica, Arial, sans-serif;
@@ -22,17 +24,17 @@
     animation: shape 1.5s;
     opacity: 1;
     @include respond-to(tabletas) {
-  		font-size: 4em;
-  	}
+      font-size: 4em;
+    }
     @include respond-to(celulares) {
-  		font-size: 3.5em;
+      font-size: 3.5em;
       margin-bottom: 0.5em;
-  	}
+    }
     @include respond-to(mincels) {
-  		font-size: 3.25em;
+      font-size: 3.25em;
       margin-bottom: 0.5em;
       top: 10%;
-  	}
+    }
   }
 }
 @include keyframes(shape) {
@@ -40,11 +42,13 @@
     transform: scaleX(1.05);
     opacity: 0;
   }
+
   to {
     transform: scaleX(1);
     opacity: 1;
   }
 }
+
 .btn {
   position: relative;
   top: 4.5em;
@@ -64,7 +68,7 @@
   padding: 0 20px;
   cursor: pointer;
   border: 2px solid $c2;
-  -webkit-transition:0.5s;
+  -webkit-transition: 0.5s;
   -webkit-animation: discover 1s;
   animation: discover 1s;
   @include respond-to(celulares) {
@@ -75,35 +79,43 @@
     top: 2.5em;
     line-height: 50px;
   }
+
   &:hover {
     border: 2px solid $c3;
     color: $c3;
   }
-  &:hover::after, &:hover::before {
+
+  &:hover::after,
+  &:hover::before {
     -webkit-transform: scale(1);
   }
-  &::before, &::after {
+
+  &::after,
+  &::before {
     width: 100%;
-    height:100%;
+    height: 100%;
     z-index: 3;
-    content:'';
+    content: '';
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
     -webkit-transform: scale(0);
     transition: 0.5s;
   }
+
   &::before {
     border-bottom: 3px solid $c3;
     border-left: 3px solid $c3;
     -webkit-transform-origin: 0 100%;
   }
+
   &::after {
     border-top: 3px solid $c3;
     border-right: 3px solid $c3;
-    -webkit-transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0;
   }
+
   &:nth-child(3) {
     margin-top: 1.35em;
     width: 6em;
@@ -117,6 +129,7 @@
       margin-top: 1.2em;
     }
   }
+
   &:nth-child(3):hover {
     background: $c3;
     color: $c1;
@@ -126,13 +139,12 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
-
 // Login
-
 .login {
   font: {
     family: 'Oswald', Helvetica, Arial, sans-serif;
@@ -151,12 +163,13 @@
     top: 8em;
   }
 }
+
 .arrow-up {
-	width: 0;
-	height: 0;
-	border: {
+  width: 0;
+  height: 0;
+  border: {
     left: 20px solid transparent;
-  	right: 20px solid transparent;
+    right: 20px solid transparent;
     bottom: 15px solid $c4;
   }
   left: 50%;
@@ -170,13 +183,16 @@
   width: 100%;
   border-radius: 5px;
   padding-top: 5px;
+
   .randompad {
     padding: 10px;
+
     fieldset {
       border: none;
       @include respond-to(mincels) {
         font-size: 99%;
       }
+
       .input__label {
         width: calc(100% - 2em);
         font: {
@@ -187,9 +203,11 @@
           font-size: 60%;
         }
       }
+
       .input__field {
         padding: 0.6em;
       }
+
       input[type="submit"] {
         border: 2px solid $c2;
         border-radius: 5px;
@@ -202,17 +220,18 @@
         display: block;
         width: 70%;
         cursor: pointer;
-        margin: auto;
-        margin-top: 5px;
+        margin: 5px auto auto;
         color: $c2;
         -webkit-transition: 0.4s;
         transition: 0.4s;
         @include respond-to(mincels) {
           margin-top: 0;
         }
+
         &:focus {
           outline: none;
         }
+
         &:hover {
           background-color: $c3;
           color: $c1;
@@ -221,10 +240,7 @@
     }
   }
 }
-
-
 // Form
-
 .content {
   font: {
     family: 'Oswald', Helvetica, Arial, sans-serif;
@@ -232,7 +248,7 @@
   }
   background: {
     color: $c3;
-    image: url(../img/overlay.png);
+    image: url("../img/overlay.png");
   }
   text-align: center;
   color: $c1;
@@ -240,6 +256,7 @@
   @include respond-to(mincels) {
     min-height: 115vh;
   }
+
   h2 {
     font-size: 2em;
     padding-top: 1.25em;
@@ -252,6 +269,7 @@
     }
   }
 }
+
 .input {
   position: relative;
   z-index: 1;
@@ -260,6 +278,7 @@
   max-width: 350px;
   width: calc(100% - 2em);
   vertical-align: top;
+
   &:last-child {
     display: block;
     margin: auto;
@@ -268,6 +287,7 @@
     margin: 0.5em;
   }
 }
+
 .input__field {
   position: relative;
   left: 0.75em;
@@ -276,7 +296,7 @@
   padding: 0.8em;
   width: 82.5%;
   border: none;
-	border-radius: 0;
+  border-radius: 0;
   background: transparent;
   color: #f5f5f5;
   font: {
@@ -285,28 +305,34 @@
   }
   line-height: 1.25;
   letter-spacing: 0.25px;
-  -webkit-appearance: none; /* for box shadows to show on iOS */
+  -webkit-appearance: none;
+  /* for box shadows to show on iOS */
   z-index: 10;
   opacity: 0;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
+
   &:invalid {
     box-shadow: none;
   }
+
   &:-moz-submit-invalid {
     box-shadow: none;
   }
+
   &:-moz-ui-invalid {
-    box-shadow:none;
+    box-shadow: none;
   }
   @include respond-to(celulares) {
     left: 0.5em;
     top: 0.35em;
   }
+
   &:focus {
     outline: none;
   }
 }
+
 .input__label {
   display: inline-block;
   float: none;
@@ -329,31 +355,34 @@
   @include respond-to(celulares) {
     width: 90%;
   }
+
   &::before {
-  	content: '';
-  	position: absolute;
-  	bottom: 100%;
-  	left: 0;
-  	width: 100%;
-  	height: 3.75em;
-  	background: $c2;
-  	-webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
-  	transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 3.75em;
+    background: $c2;
+    -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
     @include respond-to(celulares) {
       height: 2.75em;
     }
-  	@include trans;
+    @include trans;
   }
+
   &::after {
-  	content: '';
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 0.25em;
-  	background: $c2;
-  	@include trans;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.25em;
+    background: $c2;
+    @include trans;
   }
+
   textarea + &::before {
     height: 10.75em;
     @include respond-to(celulares) {
@@ -361,6 +390,7 @@
     }
   }
 }
+
 .input__label-content {
   position: relative;
   display: block;
@@ -371,26 +401,31 @@
     padding: 0.5em 0;
   }
 }
-.input__field:focus,
-.input--filled .input__field {
-	opacity: 1;
-	-webkit-transition-delay: 0.4s;
-	transition-delay: 0.4s;
+
+.input--filled .input__field,
+.input__field:focus {
+  opacity: 1;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
 }
-.input__field:focus + .input__label::before,
-.input--filled .input__label::before {
-	-webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
-	transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+
+.input--filled .input__label::before,
+.input__field:focus + .input__label::before {
+  -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
+  transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
 }
-.input__field:focus + .input__label,
-.input--filled .input__label {
-	pointer-events: none;
+
+.input--filled .input__label,
+.input__field:focus + .input__label {
+  pointer-events: none;
 }
-.input__field:focus + .input__label::after,
-.input--filled .input__label::after {
-	-webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
-	transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+
+.input--filled .input__label::after,
+.input__field:focus + .input__label::after {
+  -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
+  transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
 }
+
 form {
   button[type="submit"] {
     border: 2px solid $c2;
@@ -404,8 +439,7 @@ form {
     display: block;
     width: 15%;
     cursor: pointer;
-    margin: auto;
-    margin-top: 5px;
+    margin: 5px auto auto;
     color: $c2;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -418,9 +452,11 @@ form {
     @include respond-to(mincels) {
       width: 80%;
     }
+
     &:focus {
       outline: none;
     }
+
     &:hover {
       background-color: $c3;
       color: $c1;
