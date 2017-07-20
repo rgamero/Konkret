@@ -43,6 +43,21 @@ a {
   vertical-align: baseline;
   background: transparent; }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #303030;
+  -webkit-text-fill-color: #303030;
+  -webkit-box-shadow: 0 0 0px 1000px #c4c4c4 inset;
+  transition: background-color 500ms ease-in-out 0s; }
+
 .cabecera {
   color: #303030;
   background-color: #c4c4c4;
@@ -216,21 +231,21 @@ a {
   padding-top: 5px; }
   .formholder .randompad {
     padding: 10px; }
-    .formholder .randompad fieldset {
+    .formholder .randompad form {
       border: none; }
       @media (max-width: 360px) {
-        .formholder .randompad fieldset {
+        .formholder .randompad form {
           font-size: 99%; } }
-      .formholder .randompad fieldset .input__label {
+      .formholder .randompad form .input__label {
         width: calc(100% - 2em);
         font-weight: 300;
         font-size: 70%; }
         @media (max-width: 360px) {
-          .formholder .randompad fieldset .input__label {
+          .formholder .randompad form .input__label {
             font-size: 60%; } }
-      .formholder .randompad fieldset .input__field {
+      .formholder .randompad form .input__field {
         padding: 0.6em; }
-      .formholder .randompad fieldset input[type="submit"] {
+      .formholder .randompad form input[type="submit"] {
         border: 2px solid #787878;
         border-radius: 5px;
         background-color: transparent;
@@ -245,11 +260,11 @@ a {
         -webkit-transition: 0.4s;
         transition: 0.4s; }
         @media (max-width: 360px) {
-          .formholder .randompad fieldset input[type="submit"] {
+          .formholder .randompad form input[type="submit"] {
             margin-top: 0; } }
-        .formholder .randompad fieldset input[type="submit"]:focus {
+        .formholder .randompad form input[type="submit"]:focus {
           outline: none; }
-        .formholder .randompad fieldset input[type="submit"]:hover {
+        .formholder .randompad form input[type="submit"]:hover {
           background-color: #303030;
           color: #c4c4c4; }
 

@@ -31,7 +31,7 @@
 			<div class="arrow-up"></div>
 			<div class="formholder">
 				<div class="randompad">
-					<fieldset>
+					<form>
 						<input class="input__field" type="email" maxlength="35" id="correo" />
 						<label class="input__label" for="correo">
    						<span class="input__label-content">E-mail</span>
@@ -40,8 +40,8 @@
 						<label class="input__label" for="pass">
    						<span class="input__label-content" style="margin-bottom: 10px">Password</span>
    					 </label>
-						<input type="submit" value="Login" />
-					</fieldset>
+						<input type="submit" value="Login" id="log" />
+					</form>
 				</div>
 			</div>
 		</div>
@@ -73,6 +73,7 @@
 		</form>
 	</section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<script src="js/classie.js"></script>
 	<script src="js/mobile-chrome-vh-fix.js"></script>
 	<script type="text/javascript">
@@ -103,7 +104,7 @@
 	</script>
 	<script type="text/javascript">
 		$('#loginform').click(function() {
-			$('.login').fadeToggle('slow');
+			$('.login').animate({ height: 'toggle', opacity: 'toggle' }, 400, 'easeInOutCubic');
 		});
 		$(document).mouseup(function(e) {
 			var container = $(".login");
@@ -112,7 +113,7 @@
 				&&
 				container.has(e.target).length === 0) // ... nor a descendant of the container
 			{
-				container.hide();
+				container.fadeOut('fast');
 			}
 		});
 	</script>

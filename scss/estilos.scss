@@ -1,6 +1,7 @@
+@import "_variables";
 @import "_reset";
 @import "_mixins";
-@import "_variables";
+
 
 .cabecera {
   color: $c3;
@@ -187,7 +188,7 @@
   .randompad {
     padding: 10px;
 
-    fieldset {
+    form {
       border: none;
       @include respond-to(mincels) {
         font-size: 99%;

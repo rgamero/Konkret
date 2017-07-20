@@ -43,3 +43,18 @@ a {
     vertical-align:baseline;
     background:transparent;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid $c3;
+  -webkit-text-fill-color: $c3;
+  -webkit-box-shadow: 0 0 0px 1000px $c1 inset;
+  transition: background-color 500ms ease-in-out 0s;
+}
